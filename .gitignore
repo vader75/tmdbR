@@ -1,0 +1,22 @@
+# R session and editor files
+.RData
+.Rhistory
+.Ruserdata
+.Rproj.user/
+.DS_Store
+Rplots.pdf
+
+# Package build and check artefacts
+/*.tar.gz
+/*.Rcheck/
+
+# Generated temporary files
+/tmp/
+__pycache__/
+*.py[cod]
+
+# Local credentials and environment files
+.Renviron
+.env
+token.rds
+*.token.rds

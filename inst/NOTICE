@@ -1,0 +1,10 @@
+tmdbR is distributed under the Artistic License 2.0.
+
+The compatibility interface is derived from TMDb 1.1 by Andrea Capozio,
+published by CRAN on 16 March 2020 and distributed under the Artistic License
+2.0: https://CRAN.R-project.org/package=TMDb. tmdbR is a separately named,
+modified package and is not an official update by the original author.
+
+This product uses the TMDB API but is not endorsed or certified by TMDB.
+Applications using this package must independently satisfy TMDB's current
+terms of use and attribution requirements.
