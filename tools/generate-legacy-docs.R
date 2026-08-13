@@ -110,7 +110,26 @@ example_args <- function(name, fn) {
     add("max_results", "40")
     add("progress", "TRUE")
   }
-  paste(args, collapse = ", ")
+  args
+}
+
+format_usage <- function(name, fn) {
+  formal_values <- as.list(formals(fn))
+  formal_names <- names(formal_values)
+  arguments <- vapply(seq_along(formal_values), function(i) {
+    value <- paste(deparse(formal_values[[i]], width.cutoff = 500L), collapse = " ")
+    if (!nzchar(value)) formal_names[[i]] else
+      paste(formal_names[[i]], "=", value)
+  }, character(1))
+  commas <- c(rep(",", length(arguments) - 1L), "")
+  paste(c(paste0(name, "("), paste0("  ", arguments, commas), ")"),
+        collapse = "\n")
+}
+
+format_call <- function(name, arguments) {
+  if (!length(arguments)) return(paste0(name, "()"))
+  commas <- c(rep(",", length(arguments) - 1L), "")
+  c(paste0(name, "("), paste0("  ", arguments, commas), ")")
 }
 
 details_for <- function(name) {
@@ -130,16 +149,13 @@ for (name in names(env$.tmdb_legacy_specs)) {
   spec <- env$.tmdb_legacy_specs[[name]]
   fn <- env[[name]]
   formals_names <- names(formals(fn))
-  signature <- paste(capture.output(print(args(fn))), collapse = "\n")
-  signature <- sub("^function ", "", signature)
-  signature <- sub("\nNULL$", "", signature)
-  usage <- paste0(name, signature)
+  usage <- format_usage(name, fn)
   items <- vapply(formals_names, function(arg) {
     doc <- argument_docs[[arg]]
     if (is.null(doc)) doc <- paste("Value for", arg, "as accepted by TMDB.")
     sprintf("  \\item{%s}{%s}", arg, doc)
   }, character(1))
-  example <- sprintf("%s(%s)", name, example_args(name, fn))
+  example <- format_call(name, example_args(name, fn))
   paginated <- "page" %in% formals_names || grepl("^(search_|discover_|changes_)", name)
   seealso <- if (paginated) "\\code{tmdb_paginate}, \\code{tmdb_request}" else "\\code{tmdb_request}"
   value <- if (paginated) "A parsed response containing page metadata and a results data frame or list." else "The parsed TMDB response as R lists, data frames, and vectors."
@@ -159,8 +175,10 @@ for (name in names(env$.tmdb_legacy_specs)) {
     sprintf("\\details{%s Authentication can use an explicit API key or package environment variables.}", details_for(name)),
     pagination_note,
     sprintf("\\seealso{%s}", seealso),
-    "\\examples{", "\\dontrun{",
-    "# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.", example,
+    "\\examples{",
+    sprintf("args(%s)", name),
+    "\\dontrun{",
+    "# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.", example,
     "}", "}", ""
   )
   writeLines(rd, file.path(root, "man", paste0(name, ".Rd")))

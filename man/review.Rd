@@ -2,7 +2,10 @@
 \alias{review}
 \title{Review from TMDB}
 \usage{
-review(api_key = NULL, id) 
+review(
+  api_key = NULL,
+  id
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -13,9 +16,12 @@ review(api_key = NULL, id)
 \details{The response is parsed from JSON into ordinary R lists, data frames, and vectors. HTTP failures raise an error containing TMDB's status and message. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
+args(review)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
-review(id = "replace-with-review-id")
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+review(
+  id = "replace-with-review-id"
+)
 }
 }
 

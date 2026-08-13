@@ -2,7 +2,11 @@
 \alias{person_tmdb}
 \title{Person Tmdb from TMDB}
 \usage{
-person_tmdb(api_key = NULL, id, append_to_response = NA) 
+person_tmdb(
+  api_key = NULL,
+  id,
+  append_to_response = NA
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -14,9 +18,13 @@ person_tmdb(api_key = NULL, id, append_to_response = NA)
 \details{The response is parsed from JSON into ordinary R lists, data frames, and vectors. HTTP failures raise an error containing TMDB's status and message. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
+args(person_tmdb)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
-person_tmdb(id = 287, append_to_response = "combined_credits")
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+person_tmdb(
+  id = 287,
+  append_to_response = "combined_credits"
+)
 }
 }
 

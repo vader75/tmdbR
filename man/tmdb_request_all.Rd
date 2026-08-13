@@ -36,6 +36,7 @@ follows \code{total_pages} rather than assuming a fixed page size.
 }
 \seealso{\code{tmdb_paginate}, \code{tmdb_request}}
 \examples{
+args(tmdb_request_all)
 \dontrun{
 # Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
 tmdb_request_all("discover/movie",

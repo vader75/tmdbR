@@ -1,3 +1,9 @@
 ^tmdbR_[0-9.]+\.tar\.gz$
 ^\.git$
 ^\.gitignore$
+^cran-comments\.md$
+^CRAN-SUBMISSION$
+^Rplots\.pdf$
+^output$
+^tmp$
+^scripts$

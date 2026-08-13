@@ -5,6 +5,10 @@ published by CRAN on 16 March 2020 and distributed under the Artistic License
 2.0: https://CRAN.R-project.org/package=TMDb. tmdbR is a separately named,
 modified package and is not an official update by the original author.
 
+Copyright for the original TMDb 1.1 components remains with Andrea Capozio.
+Copyright for the tmdbR modifications is held by Gordon Kuzet. Both are
+distributed as part of tmdbR under the Artistic License 2.0.
+
 This product uses the TMDB API but is not endorsed or certified by TMDB.
 Applications using this package must independently satisfy TMDB's current
 terms of use and attribution requirements.

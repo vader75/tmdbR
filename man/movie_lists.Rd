@@ -2,10 +2,21 @@
 \alias{movie_lists}
 \title{Movie Lists from TMDB}
 \usage{
-movie_lists(api_key = NULL, id, page = 1, language = NA, append_to_response = NA, 
-    paginate = FALSE, max_pages = 5L, max_results = 100L, max_memory_mb = 100, 
-    simplify = TRUE, deduplicate_by = NULL, progress = interactive(), 
-    delay = 0.05) 
+movie_lists(
+  api_key = NULL,
+  id,
+  page = 1,
+  language = NA,
+  append_to_response = NA,
+  paginate = FALSE,
+  max_pages = 5L,
+  max_results = 100L,
+  max_memory_mb = 100,
+  simplify = TRUE,
+  deduplicate_by = NULL,
+  progress = interactive(),
+  delay = 0.05
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -30,9 +41,17 @@ movie_lists(api_key = NULL, id, page = 1, language = NA, append_to_response = NA
 }
 \seealso{\code{tmdb_paginate}, \code{tmdb_request}}
 \examples{
+args(movie_lists)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
-movie_lists(id = 550, language = "en-AU", paginate = TRUE, max_pages = 2, max_results = 40, progress = TRUE)
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+movie_lists(
+  id = 550,
+  language = "en-AU",
+  paginate = TRUE,
+  max_pages = 2,
+  max_results = 40,
+  progress = TRUE
+)
 }
 }
 

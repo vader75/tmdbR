@@ -2,7 +2,9 @@
 \alias{certification_movie_list}
 \title{Certification Movie List from TMDB}
 \usage{
-certification_movie_list(api_key = NULL) 
+certification_movie_list(
+  api_key = NULL
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -12,8 +14,9 @@ certification_movie_list(api_key = NULL)
 \details{The response is parsed from JSON into ordinary R lists, data frames, and vectors. HTTP failures raise an error containing TMDB's status and message. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
+args(certification_movie_list)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
 certification_movie_list()
 }
 }

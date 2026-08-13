@@ -90,6 +90,7 @@ Gordon Kuzet \email{30060726@westernsydney.edu.au}.
 The compatibility interface is based on TMDb 1.1 by Andrea Capozio.
 }
 \examples{
+tmdb_config(timeout = 20, max_tries = 3)
 \dontrun{
 # Interactive bearer-token setup:
 tmdb_auth()

@@ -2,10 +2,21 @@
 \alias{movie_changes}
 \title{Movie Changes from TMDB}
 \usage{
-movie_changes(api_key = NULL, id, start_date = NA, end_date = NA, 
-    page = 1, paginate = FALSE, max_pages = 5L, max_results = 100L, 
-    max_memory_mb = 100, simplify = TRUE, deduplicate_by = NULL, 
-    progress = interactive(), delay = 0.05) 
+movie_changes(
+  api_key = NULL,
+  id,
+  start_date = NA,
+  end_date = NA,
+  page = 1,
+  paginate = FALSE,
+  max_pages = 5L,
+  max_results = 100L,
+  max_memory_mb = 100,
+  simplify = TRUE,
+  deduplicate_by = NULL,
+  progress = interactive(),
+  delay = 0.05
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -30,9 +41,18 @@ movie_changes(api_key = NULL, id, start_date = NA, end_date = NA,
 }
 \seealso{\code{tmdb_paginate}, \code{tmdb_request}}
 \examples{
+args(movie_changes)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
-movie_changes(id = 550, start_date = as.character(Sys.Date() - 6), end_date = as.character(Sys.Date()), paginate = TRUE, max_pages = 2, max_results = 40, progress = TRUE)
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+movie_changes(
+  id = 550,
+  start_date = as.character(Sys.Date() - 6),
+  end_date = as.character(Sys.Date()),
+  paginate = TRUE,
+  max_pages = 2,
+  max_results = 40,
+  progress = TRUE
+)
 }
 }
 

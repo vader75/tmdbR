@@ -8,7 +8,13 @@ official update by the original author.
 
 ## Installation
 
-Install the built source package from a shell:
+Install the released package from CRAN:
+
+```r
+install.packages("tmdbR")
+```
+
+Alternatively, install a locally built source package from a shell:
 
 ```sh
 R CMD INSTALL tmdbR_0.2.2.tar.gz
@@ -201,6 +207,8 @@ R CMD check --as-cran tmdbR_0.2.2.tar.gz
 
 Live smoke tests are skipped unless `TMDB_LIVE_TESTS=true` and a credential is
 available.
+
+Report problems at the [tmdbR issue tracker](https://github.com/vader75/tmdbR/issues).
 
 This product uses the TMDB API but is not endorsed or certified by TMDB. See
 the [TMDB API documentation](https://developer.themoviedb.org/docs/getting-started)

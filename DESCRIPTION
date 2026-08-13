@@ -3,10 +3,12 @@ Type: Package
 Title: Modern R Client for the Movie Database API
 Version: 0.2.2
 Authors@R: c(
-    person("Gordon", "Kuzet", role = c("aut", "cre"),
+    person("Gordon", "Kuzet", role = c("aut", "cre", "cph"),
            email = "30060726@westernsydney.edu.au"),
-    person("Andrea", "Capozio", role = "ctb",
+    person("Andrea", "Capozio", role = c("ctb", "cph"),
            comment = "Author of the legacy TMDb 1.1 package on which the compatibility interface is based"))
+Copyright: Original 'TMDb' 1.1 components copyright Andrea Capozio.
+    'tmdbR' modifications copyright Gordon Kuzet.
 Description: A modern, tested client for version 3 of The Movie Database
     ('TMDB') API. It preserves the public read-only functions from the legacy
     'TMDb' package (version 1.1, published in 2020) while adding HTTPS,
@@ -14,7 +16,9 @@ Description: A modern, tested client for version 3 of The Movie Database
     encoding.
 License: Artistic-2.0
 URL: https://developer.themoviedb.org/docs/getting-started,
-    https://CRAN.R-project.org/package=TMDb
+    https://CRAN.R-project.org/package=TMDb,
+    https://github.com/vader75/tmdbR
+BugReports: https://github.com/vader75/tmdbR/issues
 Encoding: UTF-8
 RoxygenNote: 7.3.2
 Depends: R (>= 4.1.0)
