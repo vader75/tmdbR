@@ -39,9 +39,8 @@ movie_top_rated(
 }
 \seealso{\code{tmdb_paginate}, \code{tmdb_request}}
 \examples{
-args(movie_top_rated)
-\dontrun{
-# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+# Live examples run only in an interactive session with a bearer token.
+if (interactive() && nzchar(Sys.getenv("TMDB_BEARER_TOKEN"))) {
 movie_top_rated(
   language = "en-AU",
   region = "AU",

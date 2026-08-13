@@ -43,9 +43,8 @@ search_person(
 }
 \seealso{\code{tmdb_paginate}, \code{tmdb_request}}
 \examples{
-args(search_person)
-\dontrun{
-# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+# Live examples run only in an interactive session with a bearer token.
+if (interactive() && nzchar(Sys.getenv("TMDB_BEARER_TOKEN"))) {
 search_person(
   query = "Tom Hanks",
   language = "en-AU",

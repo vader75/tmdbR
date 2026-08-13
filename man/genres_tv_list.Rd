@@ -16,9 +16,8 @@ genres_tv_list(
 \details{The response is parsed from JSON into ordinary R lists, data frames, and vectors. HTTP failures raise an error containing TMDB's status and message. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
-args(genres_tv_list)
-\dontrun{
-# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+# Live examples run only in an interactive session with a bearer token.
+if (interactive() && nzchar(Sys.getenv("TMDB_BEARER_TOKEN"))) {
 genres_tv_list(
   language = "en-AU"
 )

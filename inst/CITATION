@@ -1,0 +1,10 @@
+citHeader("To cite tmdbR in publications, use:")
+
+bibentry(
+  bibtype = "Manual",
+  title = "tmdbR: Modern R Client for the Movie Database API",
+  author = person("Gordon", "Kuzet"),
+  year = "2026",
+  note = "R package version 0.2.2",
+  url = "https://github.com/vader75/tmdbR"
+)

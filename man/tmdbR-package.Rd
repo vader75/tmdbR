@@ -91,17 +91,9 @@ The compatibility interface is based on TMDb 1.1 by Andrea Capozio.
 }
 \examples{
 tmdb_config(timeout = 20, max_tries = 3)
-\dontrun{
-# Interactive bearer-token setup:
-tmdb_auth()
-
-hits <- search_movie(query = "Spirited Away", language = "en-AU")
-movie(id = hits$results$id[[1]], append_to_response = "credits,videos")
-
-popular <- movie_popular(
-  region = "AU", paginate = TRUE,
-  max_pages = 3, max_results = 50,
-  progress = TRUE
-)
+# Live examples run only in an interactive session with a bearer token.
+if (interactive() && nzchar(Sys.getenv("TMDB_BEARER_TOKEN"))) {
+  hits <- search_movie(query = "Spirited Away", language = "en-AU")
+  movie(id = hits$results$id[[1]], append_to_response = "credits,videos")
 }
 }

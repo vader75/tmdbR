@@ -39,9 +39,8 @@ tv_airing_today(
 }
 \seealso{\code{tmdb_paginate}, \code{tmdb_request}}
 \examples{
-args(tv_airing_today)
-\dontrun{
-# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+# Live examples run only in an interactive session with a bearer token.
+if (interactive() && nzchar(Sys.getenv("TMDB_BEARER_TOKEN"))) {
 tv_airing_today(
   language = "en-AU",
   paginate = TRUE,

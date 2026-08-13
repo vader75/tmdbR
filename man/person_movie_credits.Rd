@@ -20,9 +20,8 @@ person_movie_credits(
 \details{The response is parsed from JSON into ordinary R lists, data frames, and vectors. HTTP failures raise an error containing TMDB's status and message. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
-args(person_movie_credits)
-\dontrun{
-# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+# Live examples run only in an interactive session with a bearer token.
+if (interactive() && nzchar(Sys.getenv("TMDB_BEARER_TOKEN"))) {
 person_movie_credits(
   id = 287,
   language = "en-AU"

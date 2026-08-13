@@ -1,0 +1,112 @@
+---
+title: "Getting started with tmdbR"
+author: "Gordon Kuzet"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with tmdbR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+`tmdbR` is a modern client for version 3 of The Movie Database (TMDB) API.
+It retains the read-only interface of the legacy `TMDb` package while adding
+bearer authentication, current endpoints, retries, structured errors, and safe
+automatic pagination.
+
+## Authentication
+
+Create an API Read Access Token in your TMDB account. Save it outside scripts:
+
+```{r auth, eval=FALSE}
+library(tmdbR)
+tmdb_auth()  # securely prompts for and caches the token
+```
+
+For temporary or automated sessions, set an environment variable before
+loading the package:
+
+```{r auth-environment, eval=FALSE}
+Sys.setenv(TMDB_BEARER_TOKEN = "your-token")
+library(tmdbR)
+```
+
+Never commit credentials. The older `TMDB_API_KEY` environment variable remains
+supported for compatibility, but bearer authentication is recommended.
+
+## Search and retrieve details
+
+Search results contain TMDB identifiers that can be passed to detail functions:
+
+```{r search, eval=FALSE}
+hits <- search_movie(query = "Spirited Away", language = "en-AU")
+film <- movie(
+  id = hits$results$id[[1]],
+  append_to_response = "credits,videos"
+)
+```
+
+Use `help(tmdb_movies)`, `help(tmdb_tv)`, and `help(tmdb_people)` to browse
+functions by subject.
+
+## Automatic pagination
+
+Pagination is opt-in. Limits protect users from unexpectedly large requests:
+
+```{r pagination, eval=FALSE}
+popular <- movie_popular(
+  region = "AU",
+  paginate = TRUE,
+  max_pages = 3,
+  max_results = 50,
+  progress = TRUE
+)
+
+popular$results
+popular$pages_fetched
+popular$truncated
+```
+
+TMDB controls page size. The package counts actual returned records and follows
+TMDB's `total_pages` value instead of assuming a fixed number of results per
+page.
+
+## Discover filters
+
+Discover endpoints support regional availability and watch-provider filters:
+
+```{r discover, eval=FALSE}
+available <- discover_movie(
+  watch_region = "AU",
+  with_watch_providers = c(8, 9),
+  with_watch_monetization_types = "flatrate",
+  sort_by = "popularity.desc"
+)
+```
+
+## Errors and retries
+
+HTTP errors are raised as R errors containing TMDB's status and message without
+exposing credentials. Rate-limit responses and transient server failures are
+retried automatically. Low-level requests can customise this behaviour:
+
+```{r configuration, eval=FALSE}
+cfg <- tmdb_config(timeout = 30, max_tries = 5)
+tmdb_request("movie/550", config = cfg)
+```
+
+## Migrating from TMDb 1.1
+
+Most legacy calls remain valid, and the first `api_key` argument is optional
+when a bearer token is configured. Important endpoint replacements include:
+
+- `movie_releases()` now uses the current release-dates endpoint.
+- `keyword_movies()`, `company_movies()`, and `genres_movies()` use supported
+  discover filters.
+- `search_list()` maps to collection search because the legacy list-search
+  endpoint is no longer available.
+
+This product uses the TMDB API but is not endorsed or certified by TMDB.

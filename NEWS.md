@@ -5,6 +5,8 @@
   Artistic-2.0-licensed `TMDb` 1.1 package, published on CRAN in March 2020.
 - Prepared CRAN-safe package contents, executable examples, copyright
   metadata, repository links, and submission comments.
+- Added meaningful credential-guarded examples, a getting-started vignette,
+  formal citation metadata, and CRAN-style provenance in `DESCRIPTION`.
 
 # tmdbR 0.2.1
 

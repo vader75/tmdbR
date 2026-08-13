@@ -18,9 +18,8 @@ movie_releases(
 \details{This compatibility function uses the current /release_dates endpoint. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
-args(movie_releases)
-\dontrun{
-# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+# Live examples run only in an interactive session with a bearer token.
+if (interactive() && nzchar(Sys.getenv("TMDB_BEARER_TOKEN"))) {
 movie_releases(
   id = 550
 )

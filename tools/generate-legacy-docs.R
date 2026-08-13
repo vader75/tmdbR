@@ -176,9 +176,9 @@ for (name in names(env$.tmdb_legacy_specs)) {
     pagination_note,
     sprintf("\\seealso{%s}", seealso),
     "\\examples{",
-    sprintf("args(%s)", name),
-    "\\dontrun{",
-    "# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.", example,
+    "# Live examples run only in an interactive session with a bearer token.",
+    "if (interactive() && nzchar(Sys.getenv(\"TMDB_BEARER_TOKEN\"))) {",
+    example,
     "}", "}", ""
   )
   writeLines(rd, file.path(root, "man", paste0(name, ".Rd")))

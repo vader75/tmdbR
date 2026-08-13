@@ -36,8 +36,8 @@ follows \code{total_pages} rather than assuming a fixed page size.
 }
 \seealso{\code{tmdb_paginate}, \code{tmdb_request}}
 \examples{
-args(tmdb_request_all)
-\dontrun{
+# Live examples run only in an interactive session with a bearer token.
+if (interactive() && nzchar(Sys.getenv("TMDB_BEARER_TOKEN"))) {
 # Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
 tmdb_request_all("discover/movie",
   query = list(with_genres = 878, sort_by = "popularity.desc"),
