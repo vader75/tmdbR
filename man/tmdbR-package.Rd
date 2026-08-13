@@ -85,7 +85,7 @@ requirements.
 }
 \docType{package}
 \author{
-Gordon Kuzet \email{30060726@westernsydney.edu.au}.
+Gordon Kuzet \email{gordon@kuzet.com}.
 
 The compatibility interface is based on TMDb 1.1 by Andrea Capozio.
 }

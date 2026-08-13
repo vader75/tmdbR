@@ -4,7 +4,7 @@ Title: Modern R Client for the Movie Database API
 Version: 0.2.2
 Authors@R: c(
     person("Gordon", "Kuzet", role = c("aut", "cre", "cph"),
-           email = "30060726@westernsydney.edu.au"),
+           email = "gordon@kuzet.com"),
     person("Andrea", "Capozio", role = c("ctb", "cph"),
            comment = "Author of the legacy TMDb 1.1 package on which the compatibility interface is based"))
 Copyright: Original 'TMDb' 1.1 components copyright Andrea Capozio.
