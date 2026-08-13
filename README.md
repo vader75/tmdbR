@@ -1,5 +1,7 @@
 # tmdbR
 
+[![R-CMD-check](https://github.com/vader75/tmdbR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vader75/tmdbR/actions/workflows/R-CMD-check.yaml)
+
 `tmdbR` is a modern R client for the TMDB v3 API and a compatibility successor
 to Andrea Capozio's legacy [`TMDb` 1.1 package](https://CRAN.R-project.org/package=TMDb),
 published on 16 March 2020 and licensed under the Artistic License 2.0. This

@@ -3,9 +3,6 @@
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
-* The GitHub repository is private during pre-release development and will be
-  made public before submission so its package and issue URLs are reachable by
-  CRAN's URL checks.
 
 ## Additional information
 
