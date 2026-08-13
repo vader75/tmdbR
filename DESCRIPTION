@@ -11,9 +11,9 @@ Copyright: Original 'TMDb' 1.1 components copyright Andrea Capozio.
     'tmdbR' modifications copyright Gordon Kuzet.
 Description: A modern, tested client for version 3 of The Movie Database
     ('TMDB') API. It preserves the public read-only functions from the legacy
-    'TMDb' package (version 1.1, published in 2020) while adding HTTPS,
-    bearer-token authentication, structured errors, retries, and safe query
-    encoding.
+    'TMDb' package (version 1.1, published in 2020) while adding secure web
+    requests, bearer-token authentication, structured errors, retries, and
+    safe query encoding.
 License: Artistic-2.0
 URL: https://developer.themoviedb.org/docs/getting-started,
     https://CRAN.R-project.org/package=TMDb,
