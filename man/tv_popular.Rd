@@ -37,9 +37,8 @@ tv_popular(
 }
 \seealso{\code{tmdb_paginate}, \code{tmdb_request}}
 \examples{
-args(tv_popular)
-\dontrun{
-# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+# Live examples run only in an interactive session with a bearer token.
+if (interactive() && nzchar(Sys.getenv("TMDB_BEARER_TOKEN"))) {
 tv_popular(
   language = "en-AU",
   paginate = TRUE,

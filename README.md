@@ -199,6 +199,8 @@ See `help(package = "tmdbR")`, `help(tmdb_request)`, and the category index page
 `help(tmdb_movies)`, `help(tmdb_tv)`, `help(tmdb_people)`, and
 `help(tmdb_search)`.
 
+For a guided introduction, run `vignette("getting-started", package = "tmdbR")`.
+
 ## Testing
 
 ```sh
