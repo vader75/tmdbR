@@ -17,6 +17,8 @@ raised when no credential is available. Do not print, log, or commit the
 returned values.}
 \seealso{\code{tmdb_auth}, \code{tmdb_config}, \code{tmdb_request}}
 \examples{
+credentials <- tmdb_credentials(bearer_token = "example-token")
+names(credentials)
 \dontrun{
 # Requires an environment credential or a cached token.
 credentials <- tmdb_credentials()

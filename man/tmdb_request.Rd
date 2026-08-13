@@ -23,10 +23,10 @@ include TMDB status information but exclude credentials.
 }
 \seealso{\code{tmdb_config}, \code{tmdb_request_all}}
 \examples{
+args(tmdb_request)
 \dontrun{
 # Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
 tmdb_request("movie/550", query = list(language = "en-AU"))
 tmdb_request("trending/movie/week")
 }
 }
-

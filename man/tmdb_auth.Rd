@@ -31,9 +31,9 @@ it without asking. Explicit credentials and environment variables take
 precedence over the cached token.
 }
 \examples{
+tmdb_token_path()
 \dontrun{
 tmdb_auth()
-tmdb_token_path()
 tmdb_forget_token()
 }
 }

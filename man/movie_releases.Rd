@@ -2,7 +2,11 @@
 \alias{movie_releases}
 \title{Movie Releases from TMDB}
 \usage{
-movie_releases(api_key = NULL, id, append_to_response = NA) 
+movie_releases(
+  api_key = NULL,
+  id,
+  append_to_response = NA
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -14,9 +18,12 @@ movie_releases(api_key = NULL, id, append_to_response = NA)
 \details{This compatibility function uses the current /release_dates endpoint. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
+args(movie_releases)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
-movie_releases(id = 550)
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+movie_releases(
+  id = 550
+)
 }
 }
 

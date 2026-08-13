@@ -2,7 +2,12 @@
 \alias{find_tmdb}
 \title{Find Tmdb from TMDB}
 \usage{
-find_tmdb(api_key = NULL, id, external_source, language = NA) 
+find_tmdb(
+  api_key = NULL,
+  id,
+  external_source,
+  language = NA
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -15,9 +20,14 @@ find_tmdb(api_key = NULL, id, external_source, language = NA)
 \details{The response is parsed from JSON into ordinary R lists, data frames, and vectors. HTTP failures raise an error containing TMDB's status and message. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
+args(find_tmdb)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
-find_tmdb(id = "tt0137523", external_source = "imdb_id", language = "en-AU")
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+find_tmdb(
+  id = "tt0137523",
+  external_source = "imdb_id",
+  language = "en-AU"
+)
 }
 }
 

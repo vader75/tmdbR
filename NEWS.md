@@ -3,6 +3,8 @@
 - Added explicit authorship and provenance metadata.
 - Documented that tmdbR is a modernised derivative of Andrea Capozio's
   Artistic-2.0-licensed `TMDb` 1.1 package, published on CRAN in March 2020.
+- Prepared CRAN-safe package contents, executable examples, copyright
+  metadata, repository links, and submission comments.
 
 # tmdbR 0.2.1
 

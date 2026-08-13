@@ -2,8 +2,13 @@
 \alias{collection_images}
 \title{Collection Images from TMDB}
 \usage{
-collection_images(api_key = NULL, id, language = NA, append_to_response = NA, 
-    include_image_language = NA) 
+collection_images(
+  api_key = NULL,
+  id,
+  language = NA,
+  append_to_response = NA,
+  include_image_language = NA
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -17,9 +22,14 @@ collection_images(api_key = NULL, id, language = NA, append_to_response = NA,
 \details{The response is parsed from JSON into ordinary R lists, data frames, and vectors. HTTP failures raise an error containing TMDB's status and message. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
+args(collection_images)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
-collection_images(id = 10, language = "en-AU", include_image_language = c("en", "null"))
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+collection_images(
+  id = 10,
+  language = "en-AU",
+  include_image_language = c("en", "null")
+)
 }
 }
 

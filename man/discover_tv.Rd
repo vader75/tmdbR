@@ -2,14 +2,31 @@
 \alias{discover_tv}
 \title{Discover Tv from TMDB}
 \usage{
-discover_tv(api_key = NULL, page = 1, language = NA, sort_by = NA, 
-    first_air_date_year = NA, vote_count.gte = NA, vote_average.gte = NA, 
-    with_genres = NA, with_networks = NA, first_air_date.gte = NA, 
-    first_air_date.lte = NA, watch_region = NA, with_watch_providers = NA, 
-    with_watch_monetization_types = NA, ..., paginate = FALSE, 
-    max_pages = 5L, max_results = 100L, max_memory_mb = 100, 
-    simplify = TRUE, deduplicate_by = NULL, progress = interactive(), 
-    delay = 0.05) 
+discover_tv(
+  api_key = NULL,
+  page = 1,
+  language = NA,
+  sort_by = NA,
+  first_air_date_year = NA,
+  vote_count.gte = NA,
+  vote_average.gte = NA,
+  with_genres = NA,
+  with_networks = NA,
+  first_air_date.gte = NA,
+  first_air_date.lte = NA,
+  watch_region = NA,
+  with_watch_providers = NA,
+  with_watch_monetization_types = NA,
+  ...,
+  paginate = FALSE,
+  max_pages = 5L,
+  max_results = 100L,
+  max_memory_mb = 100,
+  simplify = TRUE,
+  deduplicate_by = NULL,
+  progress = interactive(),
+  delay = 0.05
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -44,9 +61,19 @@ discover_tv(api_key = NULL, page = 1, language = NA, sort_by = NA,
 }
 \seealso{\code{tmdb_paginate}, \code{tmdb_request}}
 \examples{
+args(discover_tv)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
-discover_tv(language = "en-AU", watch_region = "AU", with_watch_providers = c(8, 9), with_watch_monetization_types = "flatrate", paginate = TRUE, max_pages = 2, max_results = 40, progress = TRUE)
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+discover_tv(
+  language = "en-AU",
+  watch_region = "AU",
+  with_watch_providers = c(8, 9),
+  with_watch_monetization_types = "flatrate",
+  paginate = TRUE,
+  max_pages = 2,
+  max_results = 40,
+  progress = TRUE
+)
 }
 }
 

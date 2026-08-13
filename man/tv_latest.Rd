@@ -2,7 +2,9 @@
 \alias{tv_latest}
 \title{Tv Latest from TMDB}
 \usage{
-tv_latest(api_key = NULL) 
+tv_latest(
+  api_key = NULL
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -12,8 +14,9 @@ tv_latest(api_key = NULL)
 \details{The response is parsed from JSON into ordinary R lists, data frames, and vectors. HTTP failures raise an error containing TMDB's status and message. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
+args(tv_latest)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
 tv_latest()
 }
 }

@@ -2,7 +2,13 @@
 \alias{tv_season_images}
 \title{Tv Season Images from TMDB}
 \usage{
-tv_season_images(api_key = NULL, id, season_number, language = NA, include_image_language = NA) 
+tv_season_images(
+  api_key = NULL,
+  id,
+  season_number,
+  language = NA,
+  include_image_language = NA
+)
 }
 \arguments{
   \item{api_key}{Optional TMDB v3 API key. If omitted, the package uses TMDB_BEARER_TOKEN or TMDB_API_KEY from the environment.}
@@ -16,9 +22,15 @@ tv_season_images(api_key = NULL, id, season_number, language = NA, include_image
 \details{The response is parsed from JSON into ordinary R lists, data frames, and vectors. HTTP failures raise an error containing TMDB's status and message. Authentication can use an explicit API key or package environment variables.}
 \seealso{\code{tmdb_request}}
 \examples{
+args(tv_season_images)
 \dontrun{
-# Requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
-tv_season_images(id = 1399, season_number = 1, language = "en-AU", include_image_language = c("en", "null"))
+# A live request requires TMDB_BEARER_TOKEN or TMDB_API_KEY.
+tv_season_images(
+  id = 1399,
+  season_number = 1,
+  language = "en-AU",
+  include_image_language = c("en", "null")
+)
 }
 }
 
