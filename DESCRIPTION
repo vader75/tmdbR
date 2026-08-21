@@ -1,6 +1,6 @@
 Package: tmdbR
 Type: Package
-Title: Modern R Client for the Movie Database API
+Title: Modern 'R' Client for 'The Movie Database' API
 Version: 0.2.2
 Authors@R: c(
     person("Gordon", "Kuzet", role = c("aut", "cre", "cph"),
@@ -9,9 +9,10 @@ Authors@R: c(
            comment = "Author of the legacy TMDb 1.1 package on which the compatibility interface is based"))
 Copyright: Original 'TMDb' 1.1 components copyright Andrea Capozio.
     'tmdbR' modifications copyright Gordon Kuzet.
-Description: A modern, tested client for version 3 of The Movie Database
-    ('TMDB') API. It modernises the interface originally provided by Capozio
-    (2020) <https://CRAN.R-project.org/package=TMDb> while adding secure web
+Description: A modern, tested client for version 3 of 'The Movie Database'
+    ('TMDB') API. It modernises the interface originally provided by the
+    legacy 'TMDb' package by Capozio (2020)
+    <https://CRAN.R-project.org/package=TMDb> while adding secure web
     requests, bearer-token authentication, structured errors, retries, safe
     query encoding, and automatic pagination.
 License: Artistic-2.0

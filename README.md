@@ -34,15 +34,16 @@ Prefer caching the API Read Access Token outside scripts:
 
 ```r
 library(tmdbR)
-tmdb_auth() # prompts once and saves an encrypted user-cache file
+token_file <- file.path(tempdir(), "tmdbR-token.rds")
+tmdb_auth(path = token_file) # prompts and saves to an explicit path
 movie(id = 550)
 ```
 
 View or remove the cache without displaying the token:
 
 ```r
-tmdb_token_path()
-tmdb_forget_token()
+tmdb_token_path(token_file)
+tmdb_forget_token(token_file)
 ```
 
 A session environment variable also works:
