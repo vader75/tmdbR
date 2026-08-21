@@ -1,5 +1,8 @@
 # tmdbR 0.2.2
 
+- Updated `DESCRIPTION` software and API name formatting for CRAN.
+- Token-cache writing no longer chooses a path by default; callers must supply
+  or explicitly configure the cache path.
 - Added explicit authorship and provenance metadata.
 - Documented that tmdbR is a modernised derivative of Andrea Capozio's
   Artistic-2.0-licensed `TMDb` 1.1 package, published on CRAN in March 2020.

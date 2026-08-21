@@ -19,7 +19,8 @@ modified package and is not an official update by the original author. See
 Configure a bearer token once with \code{tmdb_auth()}, then search for a title
 and request its details:
 \preformatted{
-tmdb_auth()
+token_file <- file.path(tempdir(), "tmdbR-token.rds")
+tmdb_auth(path = token_file)
 hits <- search_movie(query = "Spirited Away", language = "en-AU")
 film <- movie(id = hits$results$id[[1]],
               append_to_response = "credits,videos")
@@ -66,7 +67,7 @@ transient server failures are retried.
 \section{Package options and environment variables}{
 \itemize{
   \item \code{options(tmdbR.token_path = ...)} overrides the cached-token path.
-  \item \code{TMDB_TOKEN_FILE} changes the cached-token filename.
+  \item \code{TMDB_TOKEN_FILE} supplies an explicit cached-token path.
   \item \code{TMDB_BEARER_TOKEN} supplies the preferred bearer token.
   \item \code{TMDB_API_KEY} supplies a legacy v3 API key.
 }

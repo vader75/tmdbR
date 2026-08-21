@@ -23,7 +23,7 @@ Create an API Read Access Token in your TMDB account. Save it outside scripts:
 
 ```{r auth, eval=FALSE}
 library(tmdbR)
-tmdb_auth()  # securely prompts for and caches the token
+tmdb_auth(path = file.path(tempdir(), "tmdbR-token.rds"))
 ```
 
 For temporary or automated sessions, set an environment variable before

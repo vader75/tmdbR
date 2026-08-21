@@ -9,7 +9,7 @@ tmdb_credentials <- function(bearer_token = Sys.getenv("TMDB_BEARER_TOKEN"),
   }
   if (!nzchar(bearer_token) && !nzchar(api_key)) {
     stop(
-      "TMDB credentials are missing. Run tmdb_auth(), set TMDB_BEARER_TOKEN, or set TMDB_API_KEY.",
+      "TMDB credentials are missing. Run tmdb_auth(path = ...), set TMDB_BEARER_TOKEN, or set TMDB_API_KEY.",
       call. = FALSE
     )
   }
